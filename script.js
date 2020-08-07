@@ -4,7 +4,7 @@ let totalImages = 0;
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 let photosArray = [];
-let initialImagesCount = 5;
+let initialImagesCount = 9;
 const imagesCount = 30;
 
 //Unsplash API
@@ -20,11 +20,11 @@ function imageLoaded() {
     if (imagesLoaded === totalImages) {
         ready = true;
         loader.hidden = true;
-        changeImagesCountAPI();
+        updateAPIForImageCount();
     }
 }
 
-function changeImagesCountAPI() {
+function updateAPIForImageCount() {
 
     apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${imagesCount}&query=${query}&orientation=${orientation}`;
 
@@ -41,7 +41,6 @@ function helperSetAttributes(element, attributes) {
 function displayPhoto() {
     imagesLoaded = 0;
     totalImages = photosArray.length;
-    console.log("new display");
 
     photosArray.forEach((photo) => {
         //Create <a> for photo
