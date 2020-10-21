@@ -9,7 +9,9 @@ const imagesCount = 30;
 
 //Unsplash API
 
-const apiKey = config.API_KEY;
+//const apiKey = config.API_KEY;
+const apiKey = 'ObSshfRHGffM7Hng-NcmfquEx2mk27II34XRJAIuO6o';
+
 const query = 'food';
 const orientation = 'squarish';
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${initialImagesCount}&query=${query}&orientation=${orientation}`;
